@@ -1,4 +1,5 @@
 import { useSession, signIn, signOut } from "next-auth/react";
+import Image from "next/image";
 
 export default function IndexPage() {
   const { data, status } = useSession();
@@ -9,7 +10,12 @@ export default function IndexPage() {
     return (
       <div>
         <h1> hi {data.user.name}</h1>
-        <img src={data.user.image} alt={data.user.name + " photo"} />
+        <Image
+          height="90"
+          width="90"
+          src={data.user.image}
+          alt={data.user.name + " photo"}
+        />
         <button onClick={signOut}>sign out</button>
       </div>
     );

@@ -14,3 +14,6 @@ button {
   align-items: center;
   flex-direction: column;
 }
+img {
+  border-radius: 50px;
+}
