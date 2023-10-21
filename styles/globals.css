@@ -1,13 +1,8 @@
-button {
-  border: 1px solid #959595;
-  width: 200px;
-  height: 30px;
-  background: pink;
-  border-radius: 5px;
-  box-shadow: 5px 3px 7px #00000047;
+body {
+  background: #eac7c7;
   font-family: cursive;
-  cursor: pointer;
 }
+
 .wrapper {
   display: flex;
   justify-content: center;
@@ -16,4 +11,71 @@ button {
 }
 img {
   border-radius: 50px;
+  margin: 0 30px 13px;
+}
+.next-auth-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 350px;
+  height: 130px;
+}
+.userAreaWrapper {
+  display: flex;
+  justify-content: flex-end;
+  background-color: #eae0da;
+}
+
+.signInBtn {
+  width: 150px;
+}
+.imageAndBtn {
+  display: flex;
+  align-items: center;
+}
+.wrapperForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.submitBtn {
+  align-self: center;
+  background-color: #fff;
+  background-image: none;
+  background-position: 0 90%;
+  background-repeat: repeat no-repeat;
+  background-size: 4px 3px;
+  border-radius: 15px 225px 255px 15px 15px 255px 225px 15px;
+  border-style: solid;
+  border-width: 2px;
+  box-shadow: rgba(0, 0, 0, 0.2) 15px 28px 25px -18px;
+  box-sizing: border-box;
+  color: #41403e;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 1rem;
+  line-height: 23px;
+  outline: none;
+  padding: 0.55rem;
+  text-decoration: none;
+  transition: all 235ms ease-in-out;
+  border-bottom-left-radius: 15px 255px;
+  border-bottom-right-radius: 225px 15px;
+  border-top-left-radius: 255px 15px;
+  border-top-right-radius: 15px 225px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  margin: 20px;
+}
+
+.submitBtn:hover {
+  box-shadow: rgba(0, 0, 0, 0.3) 2px 8px 8px -5px;
+  transform: translate3d(0, 2px, 0);
+}
+
+.submitBtn:focus {
+  box-shadow: rgba(0, 0, 0, 0.3) 2px 8px 4px -6px;
 }

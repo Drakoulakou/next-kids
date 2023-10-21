@@ -1,29 +1,21 @@
-import { useSession, signIn, signOut } from "next-auth/react";
-import Image from "next/image";
+import { useSession } from "next-auth/react";
+import UserArea from "components/UserArea";
+import KidForm from "components/KidForm";
 
-export default function IndexPage() {
-  const { data, status } = useSession();
-
-  if (status === "loading") return <h1> loading... please wait</h1>;
-
-  if (status === "authenticated") {
-    return (
-      <div>
-        <h1> hi {data.user.name}</h1>
-        <Image
-          height="90"
-          width="90"
-          src={data.user.image}
-          alt={data.user.name + " photo"}
-        />
-        <button onClick={signOut}>sign out</button>
-      </div>
-    );
-  }
+export default function Home() {
+  const { status } = useSession();
 
   return (
-    <div className="wrapper">
-      <button onClick={() => signIn("google")}>Sign in with Google</button>
+    <div>
+      <div className="userAreaWrapper">
+        <UserArea />
+      </div>
+      {status === "authenticated" && (
+        <div>
+          <div>The kids in your class</div>
+          <KidForm />
+        </div>
+      )}
     </div>
   );
 }
