@@ -1,39 +1,38 @@
-import { useState } from "react";
 import { useForm } from "react-hook-form";
 
 export default function App() {
   const {
     register,
     handleSubmit,
-    watch,
     formState: { errors },
   } = useForm();
 
-  const [data, setData] = useState("");
-
-  const onSubmit = (data) => setData(data);
-  console.log(data);
-
-  console.log("data", data);
-
-  console.log(watch("example")); // watch input value by passing the name of it
+  async function onSubmit(data) {
+    fetch("/api/kids", {
+      method: "POST",
+      body: JSON.stringify(data),
+    });
+  }
 
   return (
     <>
       <form className="wrapperForm" onSubmit={handleSubmit(onSubmit)}>
         <label>Name</label>
-        <input placeholder="Type name..." {...register("example")} />
+        <input placeholder="Type name..." {...register("name")} />
+        {errors.name && <span>The name is required</span>}
         <label>Surname</label>
         <input
           placeholder="Type surname..."
-          {...register("exampleRequired", { required: true })}
+          {...register("surname", { required: true })}
         />
+        {errors.surname && <span>The surname is required</span>}
         <label>Age</label>
         <input
           placeholder="Type age..."
           type="number"
           {...register("age", { required: true }, { min: 0, max: 18 })}
         />
+        {errors.age && <span>The age is required</span>}
         <label>Gender</label>
         <select {...register("gender")}>
           <option value="female">Female</option>
@@ -41,14 +40,9 @@ export default function App() {
           <option value="other">Other</option>
         </select>
         {/* errors will return when field validation fails  */}
-        {errors.exampleRequired && <span>This field is required</span>}
 
         <input className="submitBtn" type="submit" />
       </form>
-      <p>Name: {data.example}</p>
-      <p>Surname: {data.exampleRequired}</p>
-      <p>Age:{data.age}</p>
-      <p>Gender:{data.gender}</p>
     </>
   );
 }
