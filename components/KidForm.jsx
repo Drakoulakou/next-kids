@@ -15,7 +15,7 @@ export default function App() {
   }
 
   return (
-    <>
+    <div className="form">
       <form className="wrapperForm" onSubmit={handleSubmit(onSubmit)}>
         <label>Name</label>
         <input placeholder="Type name..." {...register("name")} />
@@ -41,8 +41,10 @@ export default function App() {
         </select>
         {/* errors will return when field validation fails  */}
 
-        <input className="submitBtn" type="submit" />
+        <button className="submitBtn" type="submit">
+          Add Kid
+        </button>
       </form>
-    </>
+    </div>
   );
 }

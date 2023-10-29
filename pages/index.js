@@ -7,12 +7,16 @@ export default function Home() {
 
   return (
     <div>
-      <div className="userAreaWrapper">
+      {status !== "authenticated" && (
+        <div>
+          <h1 className="welcomeHeader">Welcome to Next Kids</h1>
+        </div>
+      )}
+      <div className={status === "authenticated" ? "userAreaWrapper" : ""}>
         <UserArea />
       </div>
       {status === "authenticated" && (
         <div>
-          <div>The kids in your class</div>
           <KidForm />
         </div>
       )}

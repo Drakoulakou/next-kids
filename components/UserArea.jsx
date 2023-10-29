@@ -27,7 +27,7 @@ export default function IndexPage() {
 
   return (
     <div className="wrapper">
-      <button className="signInBtn" onClick={() => signIn("google")}>
+      <button className="submitBtn" onClick={() => signIn("google")}>
         Sign in with Google
       </button>
     </div>

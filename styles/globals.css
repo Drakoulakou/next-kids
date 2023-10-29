@@ -2,6 +2,16 @@ body {
   background: #eac7c7;
   font-family: cursive;
 }
+input {
+  border-radius: 6px;
+  height: 40px;
+  width: 250px;
+}
+
+.welcomeHeader {
+  display: flex;
+  justify-content: center;
+}
 
 .wrapper {
   display: flex;
@@ -23,17 +33,19 @@ img {
 }
 .userAreaWrapper {
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
   background-color: #eae0da;
 }
 
-.signInBtn {
-  width: 150px;
-}
 .imageAndBtn {
   display: flex;
   align-items: center;
 }
+
+.form {
+  padding: 40px;
+}
+
 .wrapperForm {
   display: flex;
   flex-direction: column;
