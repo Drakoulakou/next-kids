@@ -8,7 +8,7 @@ export default async function handler(req, res) {
     }
     if (req.method === "POST") {
       const kid = JSON.parse(req.body);
-      await sql`INSERT INTO kids (firstname, lastname, age) VALUES (${kid.name},${kid.surname},${kid.age});`;
+      await sql`INSERT INTO kids (firstname, lastname, date_of_birth, gender, teacher) VALUES (${kid.name},${kid.surname},${kid.dateOfBirth},${kid.gender},${kid.teacher});`;
       const { rows } = await sql`SELECT * from kids`;
       res.status(200).json(rows);
     }

@@ -4,23 +4,21 @@ import Image from "next/image";
 export default function IndexPage() {
   const { data, status } = useSession();
 
-  if (status === "loading") return <h3> Loading... please wait</h3>;
+  if (status === "loading") return <h3> Ερχόμαστε κυρίαααα.... </h3>;
 
   if (status === "authenticated") {
     return (
       <div className="next-auth-wrapper">
-        <h3>Teacher: {data.user.name}</h3>
-        <div className="imageAndBtn">
-          <Image
-            height="40"
-            width="40"
-            src={data.user.image}
-            alt={data.user.name + " photo"}
-          />
-          <button className="submitBtn" onClick={signOut}>
-            Sign out
-          </button>
-        </div>
+        <Image
+          height="40"
+          width="40"
+          src={data.user.image}
+          alt={data.user.name + " photo"}
+        />
+        <h3>{data.user.name}</h3>
+        <button className="submitBtn" onClick={signOut}>
+          Sign out
+        </button>
       </div>
     );
   }
