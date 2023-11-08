@@ -1,10 +1,13 @@
 import { useSession, signIn, signOut } from "next-auth/react";
 import Image from "next/image";
+import loading from "../public/loading.png";
 
 export default function IndexPage() {
   const { data, status } = useSession();
 
-  if (status === "loading") return <h3> Ερχόμαστε κυρίαααα.... </h3>;
+  if (status === "loading") {
+    return <Image height="500" width="500" src={loading} alt={"loading"} />;
+  }
 
   if (status === "authenticated") {
     return (

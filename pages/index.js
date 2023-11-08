@@ -1,6 +1,6 @@
 import { useSession } from "next-auth/react";
 import UserArea from "components/UserArea";
-import KidForm from "components/KidForm";
+import KidsList from "components/KidsList";
 
 export default function Home() {
   const { status } = useSession();
@@ -17,7 +17,7 @@ export default function Home() {
       </div>
       {status === "authenticated" && (
         <div>
-          <KidForm />
+          <KidsList />
         </div>
       )}
     </div>
