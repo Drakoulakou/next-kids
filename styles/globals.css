@@ -1,24 +1,30 @@
 body {
   font-family: cursive;
-  background-image: url("/kindergarten.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  min-height: 100vh;
-  background-position: center;
-  min-width: 100vw;
+  background: radial-gradient(#fcaaf6, #bbe1ff);
 }
 
 input {
   border-radius: 6px;
   height: 40px;
   width: 250px;
+  font-size: 1.1rem;
+}
+select {
+  border-radius: 6px;
+  height: 40px;
+  width: 250px;
+  cursor: pointer;
+  font-size: 1.1rem;
 }
 
 .welcomeHeader {
-  color: #dc502f;
   display: flex;
   justify-content: center;
+  text-align: center;
   padding-top: 118px;
+}
+.welcomeSubtitle {
+  text-align: center;
 }
 
 .wrapper {
@@ -45,18 +51,18 @@ img {
 }
 
 .form {
-  padding: 40px;
+  display: flex;
+  justify-content: center;
 }
 
 .wrapperForm {
   display: flex;
   flex-direction: column;
-  align-items: center;
 }
 
 .submitBtn {
   align-self: center;
-  background-color: #fff;
+  background-color: #d5cbfb;
   background-image: none;
   background-position: 0 90%;
   background-repeat: repeat no-repeat;
