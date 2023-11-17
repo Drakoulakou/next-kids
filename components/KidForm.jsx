@@ -1,5 +1,6 @@
 import { useSession } from "next-auth/react";
 import { useState } from "react";
+import Button from "@mui/material/Button";
 import Modal from "react-modal";
 import { useForm } from "react-hook-form";
 
@@ -32,24 +33,22 @@ export default function App() {
       marginRight: "-50%",
       padding: "50px",
       transform: "translate(-50%, -50%)",
-      background: "radial-gradient(#fcaaf6, #bbe1ff)",
+      background: "radial-gradient(#fff3fe, #dbdcf2)",
       borderRadius: "40px",
     },
   };
   return (
     <div className="form">
-      <button className="submitBtn" onClick={() => setIsOpen(true)}>
+      <Button variant="outlined" onClick={() => setIsOpen(true)}>
         Add new kid
-      </button>
+      </Button>
       <Modal
         isOpen={isOpen}
         onRequestClose={() => setIsOpen(false)}
         style={customStyles}
       >
         <form className="wrapperForm" onSubmit={handleSubmit(onSubmit)}>
-          <button className="submitBtn" onClick={() => setIsOpen(false)}>
-            Close
-          </button>
+          <p>Add new kid for your class</p>
           <label>Name</label>
           <input placeholder="Type name..." {...register("name")} />
           {errors.name && <span>The name is required</span>}
@@ -72,11 +71,14 @@ export default function App() {
             <option value="female">Female</option>
             <option value="male">Male</option>
           </select>
-          {/* errors will return when field validation fails  */}
-
-          <button className="submitBtn" type="submit">
-            Add Kid
-          </button>
+          <div className="formsButtons">
+            <Button variant="outlined" onClick={() => setIsOpen(false)}>
+              Close
+            </Button>
+            <Button variant="contained" type="submit">
+              Add Kid
+            </Button>
+          </div>
         </form>
       </Modal>
     </div>

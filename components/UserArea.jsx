@@ -1,4 +1,6 @@
 import { useSession, signIn, signOut } from "next-auth/react";
+import ExitToAppIcon from "@mui/icons-material/ExitToApp";
+import Button from "@mui/material/Button";
 import Image from "next/image";
 import loading from "../public/loading.png";
 
@@ -19,18 +21,16 @@ export default function IndexPage() {
           alt={data.user.name + " photo"}
         />
         <h3>{data.user.name}</h3>
-        <button className="submitBtn" onClick={signOut}>
-          Sign out
-        </button>
+        <ExitToAppIcon className="signOutIcon" onClick={signOut} />
       </div>
     );
   }
 
   return (
     <div className="wrapper">
-      <button className="submitBtn" onClick={() => signIn("google")}>
+      <Button variant="outlined" onClick={() => signIn("google")}>
         Sign in with Google
-      </button>
+      </Button>
     </div>
   );
 }

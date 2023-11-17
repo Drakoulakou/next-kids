@@ -19,15 +19,18 @@ export default function KidsList() {
   return (
     <div className="wrapperKidsList">
       <h3>Your Kids!!!</h3>
-      {kids.map((kid) => {
-        return (
-          <ul key={kid.id}>
-            <li>
-              {kid.firstname} {kid.lastname} {getAge(kid.date_of_birth)} χρονών
-            </li>
-          </ul>
-        );
-      })}
+      <div>
+        {kids.map((kid) => {
+          return (
+            <ul key={kid.id}>
+              <li>
+                {kid.firstname} {kid.lastname} {getAge(kid.date_of_birth)}{" "}
+                χρονών
+              </li>
+            </ul>
+          );
+        })}
+      </div>
     </div>
   );
 }
